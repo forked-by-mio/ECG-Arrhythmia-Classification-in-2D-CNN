@@ -3,6 +3,10 @@ import wfdb
 import numpy as np
 from tqdm import tqdm
 import biosppy
+
+import matplotlib
+matplotlib.use('Agg')  # This needs to be done before importing plt
+
 import matplotlib.pyplot as plt
 import cv2
 import os
