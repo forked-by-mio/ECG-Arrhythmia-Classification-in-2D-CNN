@@ -199,8 +199,8 @@ def main():
         else:
             os.makedirs(outputdir)
 
-        train_img_path = '/home/cc_lee/Dataset/MIT-BIH_AD/'
-        train_file = '/home/cc_lee/Documents/ECG-Arrhythmia-classification/MIT-BIH_AD_train.txt'
+        train_img_path = './Dataset/MIT-BIH_AD/'
+        train_file = './MIT-BIH_AD_train.txt'
         num_classes = 8
         k = 10
 
@@ -257,10 +257,10 @@ def main():
         else:
             os.makedirs(outputdir)
 
-        train_img_path = '/home/cc_lee/Dataset/MIT-BIH_AD/'
-        test_img_path = '//home/cc_lee/Dataset/MIT-BIH_AD/'
-        train_file = '/home/cc_lee/Documents/ECG-Arrhythmia-classification/MIT-BIH_AD_train.txt'
-        test_file = '/home/cc_lee/Documents/ECG-Arrhythmia-classification/MIT-BIH_AD_val.txt'
+        train_img_path = './Dataset/MIT-BIH_AD/'
+        test_img_path = './Dataset/MIT-BIH_AD/'
+        train_file = './MIT-BIH_AD_train.txt'
+        test_file = './MIT-BIH_AD_val.txt'
         num_classes = 8
 
         f1 = open(train_file, 'r')
