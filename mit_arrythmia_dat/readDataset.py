@@ -104,7 +104,7 @@ if __name__ == "__main__":
         beats. 'A' for Atrial premature contraction. 'V' for premature ventricular contraction. '/' for paced beat. 'E' for Ventricular
         escape beat."""
     labels = ['N', 'L', 'R', 'A', 'V', '/', 'E', '!']
-    output_dirs = ['NOR/', 'LBBB/', 'RBBB/', 'APC/', 'PVC/', 'PAB/', 'VEB', 'VFE']
+    output_dirs = ['NOR/', 'LBBB/', 'RBBB/', 'APC/', 'PVC/', 'PAB/', 'VEB/', 'VFE/']
 
     for type, output_dir in zip(labels, output_dirs):
         sgs = segmentation(records, type, output_dir='./MIT-BIH_AD/'+output_dir)
