@@ -1,6 +1,6 @@
 from keras.layers import Dense, Dropout, Conv2D, Input, MaxPool2D, Flatten
 from keras.models import Model
-from keras.layers.normalization import BatchNormalization
+from tensorflow.keras.layers import BatchNormalization
 from keras.layers import ELU
 
 

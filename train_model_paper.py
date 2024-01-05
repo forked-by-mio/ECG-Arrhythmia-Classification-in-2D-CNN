@@ -1,6 +1,6 @@
 from models import proposed_model
 from keras.optimizers import Adam
-from keras.utils import np_utils
+from tensorflow.keras.utils import to_categorical
 
 from callbacks import Step
 import numpy as np
@@ -17,12 +17,12 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 import tensorflow as tf
-from keras.backend.tensorflow_backend import set_session
+#from keras.backend.tensorflow_backend import set_session
 
 
 config = tf.compat.v1.ConfigProto()
 config.gpu_options.per_process_gpu_memory_fraction = 0.45
-set_session(tf.compat.v1.Session(config=config))
+#set_session(tf.compat.v1.Session(config=config))
 
 
 def plot_history(history, result_dir):
@@ -124,7 +124,7 @@ def generator_train_batch( train_txt, batch_size, num_classes, img_path, inputH,
             a = i*batch_size
             b = (i+1)*batch_size
             x_train, x_labels = process_batch(new_line[a:b], img_path, inputH, inputW, train=True)
-            y = np_utils.to_categorical(np.array(x_labels), num_classes)
+            y = to_categorical(np.array(x_labels), num_classes)
             yield x_train, y
 
 def generator_val_batch(val_txt,batch_size,num_classes,img_path,inputH,inputW):
@@ -141,7 +141,7 @@ def generator_val_batch(val_txt,batch_size,num_classes,img_path,inputH,inputW):
             a = i * batch_size
             b = (i + 1) * batch_size
             y_test,y_labels = process_batch(new_line[a:b],img_path,inputH,inputW,train=False)
-            y = np_utils.to_categorical(np.array(y_labels), num_classes)
+            y = to_categorical(np.array(y_labels), num_classes)
             yield y_test, y
 
 def generator_train_batch_proposed( new_lines, k, batch_size, num_classes, img_path, inputH, inputW ):
@@ -164,7 +164,7 @@ def generator_train_batch_proposed( new_lines, k, batch_size, num_classes, img_p
             a = i*batch_size
             b = (i+1)*batch_size
             x_train, x_labels = process_batch(new_line[a:b], img_path, inputH, inputW, train=True)
-            y = np_utils.to_categorical(np.array(x_labels), num_classes)
+            y = to_categorical(np.array(x_labels), num_classes)
             yield x_train, y
         val_set += 1
 
@@ -186,7 +186,7 @@ def generator_val_batch_proposed(new_lines, k, batch_size, num_classes, img_path
             a = i * batch_size
             b = (i + 1) * batch_size
             y_test,y_labels = process_batch(new_line[a:b],img_path,inputH,inputW,train=False)
-            y = np_utils.to_categorical(np.array(y_labels), num_classes)
+            y = to_categorical(np.array(y_labels), num_classes)
             yield y_test, y
         val_set += 1
 
