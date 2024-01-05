@@ -6,7 +6,7 @@ import random
 
 
 if __name__ == '__main__':
-    dataset_root = '/home/cc_lee/Dataset/MIT-BIH_AD/'
+    dataset_root = './Dataset/MIT-BIH_AD/'
     output_dirs = ['Normal/', 'LBBB/', 'RBBB/', 'APC/', 'VPC/', 'PE/', 'VEB/', 'VFW']
 
     count = 0
