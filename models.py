@@ -5,10 +5,9 @@ from keras.layers import ELU
 
 
 
-def proposed_model(input_h=128, input_w=128):
+def proposed_model(input_h=128, input_w=128, nb_classes=8):
     input_shape = (input_h, input_w, 3)
 
-    nb_classes = 8
     inputs = Input(input_shape)
 
     # layer 1
